@@ -15,3 +15,23 @@ View 파일 변경이 가능하다.
 	2. build/libs에 jar파일로 생성됨
 	3. java -jar hello-spring-0.0.1-SNAPSHOT.jar
 	4. 실행확인
+
+4. 정적컨텐츠
+    1. static 아래에 원하는 파일을 넣고 url로 입력하면 결과가 그냥 나옴
+    - 우선 url에 입력된 컨트롤러가 있는지 찾아보고, 아닐시 static에서 찾는다.
+
+5. MVC(Model, View, Controller)
+    1. @RequestParam으로 데이터 받고(?name=데이터) 그걸 model.addAttribute로 보내주면
+    2. viewResolver를 통해 이동후 thymeleaf로 html을 변환하여 브라우저로 다시보냄
+
+6. API 방식
+    1. @ResponseBody가 있을시 HTTP의 BODY에 문자 내용을 직접 반환
+    1. viewResolver 대신에 HttpMessageConverter가 동작
+    2. 단순 문자열이면 StringConverter, 객체면 JSONConverter(Jackson2)가 동작
+    3. JSON 형식으로 반환
+
+
+@단축키
+
+ctrl + p = parameter 확인 가능
+alt + insert = getter, setter같은 generater
