@@ -30,9 +30,18 @@ View 파일 변경이 가능하다.
     2. 단순 문자열이면 StringConverter, 객체면 JSONConverter(Jackson2)가 동작
     3. JSON 형식으로 반환
 
+7. 테스트 케이스 작성
+    1. core.api.Assertions의 assertThat을 이용해 테스트를 할 수있음.
+    2. 클래스 단위로 테스트할때 함수들의 테스트의 순서는 정해져있지않음
+    3. 서로 의존관계가 없게 해야해서 @after 어노테이션 과 함께 공용데이터를 clear 해줘야함
+    4. 테스트 먼저 만들어 검증후 개발하는 것을 테스트 주도개발이라함 TDD
 
+8. 서비스
+    1. 실제 비지니스 로직을 구현현
 
 @단축키
 
 ctrl + p = parameter 확인 가능
 alt + insert = getter, setter같은 generater
+alt + enter를 통해 static import 가능
+ctrl + alt + M 을 통해 Method Extract
