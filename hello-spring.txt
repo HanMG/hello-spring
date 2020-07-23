@@ -45,3 +45,5 @@ ctrl + p = parameter 확인 가능
 alt + insert = getter, setter같은 generater
 alt + enter를 통해 static import 가능
 ctrl + alt + M 을 통해 Method Extract
+ctrl + shift + T 를 실제 클래스에 놓고 누르면 자동으로 테스트케이스 생성이 뜸
+ctrl + alt + v = 변수 추출
