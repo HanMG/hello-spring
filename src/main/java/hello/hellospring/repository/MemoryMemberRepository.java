@@ -8,7 +8,7 @@ import java.util.*;
 public class MemoryMemberRepository implements MemberRepository{
 
     // 원래는 동시성 문제가 있어서 concurrenthashMap 쓴다고함
-    private static Map<Long, Member> store = new HashMap<>();
+    private static final Map<Long, Member> store = new HashMap<>();
     // 원래는 동시성 문제가 있어서 AtomicLong을 쓴다고함
     // 단순 키 값 생성
     private static long sequence = 0L;

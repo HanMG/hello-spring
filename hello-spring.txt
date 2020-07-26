@@ -64,6 +64,24 @@ View 파일 변경이 가능하다.
     @ 주의점:  @Autowired 를 통한 DI는 helloController, MemberService와 같이 스프링이 관리
             하는 객체에서만 동작한다. 스프링 빈으로 등록하지 않고 내가 직접 생성한 객체에서는 동작 X
 
+11. H2 데이터베이스
+    1. h2database.com 에서 다운로드
+    2. window는 bin의 bat파일을 통해 실행, unix계열은 sh파일을 실행
+    3. jdbc:h2:~/test로 한번 접속한 후 계정 폴더에서 test.mv.db파일을 확인
+       이후엔 jdbc:h2:tcp://localhost/~/test 로 접속 ( 어플리케이션의 충돌 방지를 위해? )
+
+12. 순수 JDBC
+    1. JdbcMemberRepository 참고
+    2. 개방 패쇄 원칙( OCP, OPEN-CLOSED Principle) : 확장에는 열려있고, 수정에는 닫혀있다.
+    3. 스프링의 DI를 사용하면 '기존 코드를 전혀 손대지않고 설정만으로 구현 클래스를 변경' 할 수 있다.
+
+13. 스프링 통합테스트(DB까지 연결하는 테스트)
+    1. @SpringBootTest : 스프링 컨테이너와 테스트를 함께 실행한다.
+    2. @Transactional하면 테스트 시작전에 트랜잭션을 시작하고
+       테스트 후 롤백해준다. 이러면 DB에 데이터가 남지 않아 다음 테스트에
+       영향을 주지 않는다.
+    3. 테스트에 @Commit을 붙이면 commit됨
+    4. 컨테이너를 안올리고 하는 단위테스트가 나음
 
 
 
