@@ -88,6 +88,21 @@ View 파일 변경이 가능하다.
     2. 스프링 JdbcTemplate와 MyBatis 같은 라이브러리는
        JDBC API에서 본 반복코드를 대부분 제거하지만 SQL은 직접작성해야한다.
 
+15. JPA
+    1. Java Persistence API의 약자로, 자바 어플리케이션에서 관계형 데이터베이스를 사용하는 방식을 정의한 인터페이스
+    2. Hibernate는 JPA라는 명세의 구현체이다.
+       PA와 Hibernate는 마치 자바의 interface와 해당 interface를 구현한 class와 같은 관계이다.
+    3. @Id로 PK, @GeneratedValue(strategy = GenerationType.IDENTITY) 함으로써 디비에서 자동 생성해준다는 것을 표현
+    4. JPA를 쓰기위해선 EntityManager를 주입받아야한다.
+    5. Pk의 경우 바로 find 할 수 있지만 나머지의 경우 JPQL를 작성해줘야함 (라이브러리 사용하면 안짜도됨)
+    6. 저장, 변경할 경우 서비스에 @Transactional 걸어야함
+
+16. 스프링 데이터 JPA
+    1. 반복적인 CRUD 기능도 스프링 데이터 JPA가 제공
+    2. JPA를 도와주는 것이기에 JPA에 익숙해지면 사용하는 것을 권장
+    3.
+
+
 
 
 @단축키
@@ -99,3 +114,4 @@ ctrl + alt + M 을 통해 Method Extract
 ctrl + shift + T 를 실제 클래스에 놓고 누르면 자동으로 테스트케이스 생성이 뜸
 ctrl + alt + v = 변수 추출
 alt + enter = 람다식으로 변환
+alt + shift + enter = inline
