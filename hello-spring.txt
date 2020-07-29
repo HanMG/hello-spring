@@ -103,6 +103,13 @@ View 파일 변경이 가능하다.
     3. 인터페이스를 통한 기본적인 CRUD, 조회, 페이징 기능을 제공
     4. 복잡한 동적쿼리는 Querydsl이라는 라이브러리를 사용
 
+17. AOP ( Aspect Oriented Programming )
+    1. 공통 관심 사항과 핵심 관심 사항으로 분리
+    2. @Asepct 와 ProceedingJoinPoint를 사용해 작성
+    3. @Component 혹은 직접 config에 빈으로 등록
+    4. 패키지 단위로 보통 함
+    5. AOP 적용하면 가짜 프록시 빈을 먼저 호출하고 joinPoint.proceed()가 실행될때
+        진짜 빈을 호출
 
 
 
